@@ -13,3 +13,11 @@ lista: '(' elem ')' | '[' elem ']' ;
 elem: exp elem | ;
 %%
 
+int main() {
+
+    if (yyparse()==0)
+        printf("Palabra correcta!\n");
+    else
+        printf("Palabra incorrecta...\n");
+    return 0;
+}

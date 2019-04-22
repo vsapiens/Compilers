@@ -10,6 +10,6 @@ exp: atomo | lista ;
 atomo: SIM | const ;
 const: NUM | BOO | STR ;
 lista: '(' elem ')' | '[' elem ']' ;
-elem: exp elem | 
+elem: exp elem | ;
 %%
 

@@ -18,9 +18,3 @@ BOO \#[ft]
 . {printf("<<ERROR LEXICO>>\n");return 1;};
 <<EOF>> {return 0;};
 %%
-
-int main()
-{
-    yylex();
-    return 0;
-}

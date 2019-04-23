@@ -464,7 +464,7 @@ int yy_flex_debug = 0;
 char *yytext;
 #line 1 "scheme.l"
 #line 2 "scheme.l"
-
+#include "scheme.tab.h"
 #line 469 "lex.yy.c"
 
 #define INITIAL 0
@@ -736,22 +736,22 @@ do_action:	/* This label is used only to access EOF actions. */
 case 1:
 YY_RULE_SETUP
 #line 11 "scheme.l"
-{printf("(BOOL)\t");return BOO}
+{printf("(BOOL)\t");return BOO;};
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
 #line 12 "scheme.l"
-{printf("(NUM: %s)\t",yytext);return NUM}
+{printf("(NUM: %s)\t",yytext);return NUM;};
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
 #line 13 "scheme.l"
-{printf("(SIM: %s)\t",yytext);return SIM}
+{printf("(SIM: %s)\t",yytext);return SIM;};
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
 #line 14 "scheme.l"
-{printf("(STRING: %s)\t",yytext);return STR}
+{printf("(STRING: %s)\t",yytext);return STR;};
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
@@ -767,11 +767,11 @@ YY_RULE_SETUP
 case 7:
 YY_RULE_SETUP
 #line 18 "scheme.l"
-{printf("<<ERROR LEXICO>>\n");return 1;}
+{printf("<<ERROR LEXICO>>\n");return 1;};
 	YY_BREAK
 case YY_STATE_EOF(INITIAL):
 #line 19 "scheme.l"
-{return 0;}
+{return 0;};
 	YY_BREAK
 case 8:
 YY_RULE_SETUP

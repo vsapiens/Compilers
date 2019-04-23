@@ -1,1 +1,4 @@
-45 50 0 abc50def 0000 l ls
+12 12 
+12
+12 
+hola como estas

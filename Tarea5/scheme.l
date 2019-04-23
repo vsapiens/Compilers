@@ -2,18 +2,21 @@
 
 %}
 NUM -?[1-9][0-9]*
-STR [a-zA-Z(\ )]*
+STR [0-9a-z(\ )]*
+SIM [a-z]*
+BOO \#[ft]
+
 %%
-#f {printf("(BOOL: False)\n");}
-#t {printf("(BOOL: True)\n");}
 
+{BOO} {printf("(BOOL)\t");return BOO}
+{NUM} {printf("(NUM: %s)\t",yytext);return NUM}
+{SIM} {printf("(SIM: %s)\t",yytext);return SIM}
+\“{STR}\” {printf("(STRING: %s)\t",yytext);return STR}
 
-{NUM} {printf("(NUM: %s)\n",yytext);}
 (\ )+ ;
-[\n]  {printf("New Line\n");}
+[\n]  ;
 . {printf("<<ERROR LEXICO>>\n");return 1;}
-
-\"{STR}\" {printf("(STRING: %s)\n",yytext);}
+<<EOF>> {return 0;}
 %%
 
 int main()

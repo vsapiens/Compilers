@@ -1,2 +1,2 @@
-#t #f 18 192 #f
-"hola comoe estas" hola
+atomos 25 #t “hola amigo” $
+27 #f #t “hola amigo” hola $

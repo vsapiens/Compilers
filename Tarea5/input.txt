@@ -1,2 +1,1 @@
 atomos 25 #t “hola amigo” $
-27 #f #t “hola amigo” hola $

@@ -14,13 +14,10 @@ elem: exp elem | ;
 %%
 
 int yyerror(char *s) {
-    printf("<<SYNTAX ERROR>>");
+    printf("<<SYNTAX ERROR>>\n");
     return 0;
 }
 
 int main() {
-    if (yyparse()==0)
-        printf("Palabra correcta!\n");
-    else
-        printf("Palabra incorrecta...\n");
+    yyparse();
 }

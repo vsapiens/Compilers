@@ -1,17 +1,18 @@
 %{
 #include "scheme.tab.h"
 %}
-NUM -?[1-9][0-9]*
-STR [0-9a-z(\ )]*
-SIM [a-z]*
-BOO \#[ft]
+
+NUMBER -?[1-9][0-9]*
+STRING [0-9a-z(\ )]*
+SYMBOL [a-z]*
+BOOL \#[ft]
 
 %%
 
-{BOO} {printf("(BOOL)\t");return BOO;};
-{NUM} {printf("(NUM: %s)\t",yytext);return NUM;};
-{SIM} {printf("(SIM: %s)\t",yytext);return SIM;};
-\“{STR}\” {printf("(STRING: %s)\t",yytext);return STR;};
+{BOOL} {printf("(BOOL)\t"); return(BOO);};
+{NUMBER} {printf("(NUM: %s)\t",yytext); return(NUM);};
+{SYMBOL} {printf("(SIM: %s)\t",yytext); return (SIM);};
+\“{STRING}\” {printf("(STRING: %s)\t",yytext); return (STR);};
 
 (\ )+ ;
 [\n]  ;

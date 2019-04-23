@@ -674,7 +674,7 @@ YY_DECL
 		}
 
 	{
-#line 9 "scheme.l"
+#line 10 "scheme.l"
 
 
 #line 681 "lex.yy.c"
@@ -736,47 +736,47 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 11 "scheme.l"
-{printf("(BOOL)\t");return BOO;};
+#line 12 "scheme.l"
+{printf("(BOOL)\t"); return(BOO);};
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 12 "scheme.l"
-{printf("(NUM: %s)\t",yytext);return NUM;};
+#line 13 "scheme.l"
+{printf("(NUM: %s)\t",yytext);return(NUM);};
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 13 "scheme.l"
-{printf("(SIM: %s)\t",yytext);return SIM;};
+#line 14 "scheme.l"
+{printf("(SIM: %s)\t",yytext);return (SIM);};
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 14 "scheme.l"
-{printf("(STRING: %s)\t",yytext);return STR;};
+#line 15 "scheme.l"
+{printf("(STRING: %s)\t",yytext);return (STR);};
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 16 "scheme.l"
+#line 17 "scheme.l"
 ;
 	YY_BREAK
 case 6:
 /* rule 6 can match eol */
 YY_RULE_SETUP
-#line 17 "scheme.l"
+#line 18 "scheme.l"
 ;
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 18 "scheme.l"
+#line 19 "scheme.l"
 {printf("<<ERROR LEXICO>>\n");return 1;};
 	YY_BREAK
 case YY_STATE_EOF(INITIAL):
-#line 19 "scheme.l"
+#line 20 "scheme.l"
 {return 0;};
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 20 "scheme.l"
+#line 21 "scheme.l"
 ECHO;
 	YY_BREAK
 #line 783 "lex.yy.c"
@@ -1782,5 +1782,5 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 20 "scheme.l"
+#line 21 "scheme.l"
 

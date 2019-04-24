@@ -1,1 +1,1 @@
-atomos 25 #t “hola amigo” $
+(define [sqr x] [mult x x]) $

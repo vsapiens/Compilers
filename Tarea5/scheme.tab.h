@@ -48,7 +48,12 @@ extern int yydebug;
     SIM = 258,
     NUM = 259,
     BOO = 260,
-    STR = 261
+    STR = 261,
+    END = 262,
+    LCP = 263,
+    RCP = 264,
+    LSP = 265,
+    RSP = 266
   };
 #endif
 

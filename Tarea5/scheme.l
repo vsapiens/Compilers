@@ -1,5 +1,11 @@
 %{
 #include "scheme.tab.h"
+/*
+Carlos Estrada A01039919
+Erick González A01039859
+Moisés Fernández A01197049
+Adrián Mancilla A01196967
+*/
 %}
 
 NUMBER -?[1-9][0-9]*

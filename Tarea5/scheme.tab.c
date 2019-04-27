@@ -427,8 +427,8 @@ static const yytype_uint8 yytranslate[] =
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,     8,     8,    10,    11,    13,    14,    16,    17,    19,
-      20,    21,    23,    24,    26,    27
+       0,    14,    14,    16,    17,    19,    20,    22,    23,    25,
+      26,    27,    29,    30,    32,    33
 };
 #endif
 
@@ -1208,79 +1208,79 @@ yyreduce:
   switch (yyn)
     {
         case 3:
-#line 10 "scheme.y" /* yacc.c:1646  */
+#line 16 "scheme.y" /* yacc.c:1646  */
     {printf("Parser: [PRG]\n");}
 #line 1214 "scheme.tab.c" /* yacc.c:1646  */
     break;
 
   case 4:
-#line 11 "scheme.y" /* yacc.c:1646  */
+#line 17 "scheme.y" /* yacc.c:1646  */
     {printf("Parser: [PRG]\n");}
 #line 1220 "scheme.tab.c" /* yacc.c:1646  */
     break;
 
   case 5:
-#line 13 "scheme.y" /* yacc.c:1646  */
+#line 19 "scheme.y" /* yacc.c:1646  */
     {printf("Parser: [EXP]\n");}
 #line 1226 "scheme.tab.c" /* yacc.c:1646  */
     break;
 
   case 6:
-#line 14 "scheme.y" /* yacc.c:1646  */
+#line 20 "scheme.y" /* yacc.c:1646  */
     {printf("Parser: [EXP]\n");}
 #line 1232 "scheme.tab.c" /* yacc.c:1646  */
     break;
 
   case 7:
-#line 16 "scheme.y" /* yacc.c:1646  */
+#line 22 "scheme.y" /* yacc.c:1646  */
     {printf("Parser: [ATM]\n");}
 #line 1238 "scheme.tab.c" /* yacc.c:1646  */
     break;
 
   case 8:
-#line 17 "scheme.y" /* yacc.c:1646  */
+#line 23 "scheme.y" /* yacc.c:1646  */
     {printf("Parser: [ATM]\n");}
 #line 1244 "scheme.tab.c" /* yacc.c:1646  */
     break;
 
   case 9:
-#line 19 "scheme.y" /* yacc.c:1646  */
+#line 25 "scheme.y" /* yacc.c:1646  */
     {printf("Parser: [CST]\n");}
 #line 1250 "scheme.tab.c" /* yacc.c:1646  */
     break;
 
   case 10:
-#line 20 "scheme.y" /* yacc.c:1646  */
+#line 26 "scheme.y" /* yacc.c:1646  */
     {printf("Parser: [CST]\n");}
 #line 1256 "scheme.tab.c" /* yacc.c:1646  */
     break;
 
   case 11:
-#line 21 "scheme.y" /* yacc.c:1646  */
+#line 27 "scheme.y" /* yacc.c:1646  */
     {printf("Parser: [CST]\n");}
 #line 1262 "scheme.tab.c" /* yacc.c:1646  */
     break;
 
   case 12:
-#line 23 "scheme.y" /* yacc.c:1646  */
+#line 29 "scheme.y" /* yacc.c:1646  */
     {printf("Parser: [LST]\n");}
 #line 1268 "scheme.tab.c" /* yacc.c:1646  */
     break;
 
   case 13:
-#line 24 "scheme.y" /* yacc.c:1646  */
+#line 30 "scheme.y" /* yacc.c:1646  */
     {printf("Parser: [LST]\n");}
 #line 1274 "scheme.tab.c" /* yacc.c:1646  */
     break;
 
   case 14:
-#line 26 "scheme.y" /* yacc.c:1646  */
+#line 32 "scheme.y" /* yacc.c:1646  */
     {printf("Parser: [ELM]\n");}
 #line 1280 "scheme.tab.c" /* yacc.c:1646  */
     break;
 
   case 15:
-#line 27 "scheme.y" /* yacc.c:1646  */
+#line 33 "scheme.y" /* yacc.c:1646  */
     {printf("Parser: [ELM]\n");}
 #line 1286 "scheme.tab.c" /* yacc.c:1646  */
     break;
@@ -1514,7 +1514,7 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 28 "scheme.y" /* yacc.c:1906  */
+#line 34 "scheme.y" /* yacc.c:1906  */
 
 
 int yyerror(char *s) {

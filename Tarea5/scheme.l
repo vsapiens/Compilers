@@ -13,6 +13,13 @@ STRING [0-9a-z(\ )]*
 SYMBOL [a-z]*
 BOOL \#[ft]
 END \$
+/*
+NUMBER Representa los números mayores a 0 y negativos
+STRING Representa los símbolos con dígitos y minúsculas incluyendo espacios.
+SYMBOL Representa minúsculas de la a-z
+BOOL Representa el valor booleano de la función
+END Carácter que define la terminación de la línea
+*/
 
 %%
 

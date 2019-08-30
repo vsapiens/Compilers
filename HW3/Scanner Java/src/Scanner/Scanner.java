@@ -13,11 +13,11 @@ public class Scanner {
 
     public Scanner() {
         transitionMatrix = new int[][]{
-            /*State 0*/ {0, 1, ERROR, 5, 107,108, ERROR},
+            /*State 0*/ {0, 1, ERROR, 4, 107,108, ERROR},
             /*State 1*/ {ERROR, ERROR, 2, ERROR, ERROR, ERROR, ERROR},
             /*State 2*/ {ERROR, ERROR, 3, 3, ERROR, ERROR, ERROR},
-            /*State 3*/ {104, 104, ERROR, ERROR, 104, 104,104},
-            /*State 5*/ {106, 106, 106, 5, 106, 106,106}
+            /*State 3*/ {104, 104, 3, 3, 104, 104,104},
+            /*State 4*/ {106, 106, 106, 4, 106, 106,106}
         };
 
     }
@@ -45,10 +45,10 @@ public class Scanner {
                 }
             } while (index < string.length() && state < 100);
             switch (state) {
-	            //State for variable
-            	case 5:
+            	case 4:
             		  tokens.add(new Token(Type.NUMBER, value.toString()));
             		break;
+            	//State for variable
 	            case 104:
 	                tokens.add(new Token(Type.VARIABLE, value.toString()));
 	                break;
@@ -72,7 +72,7 @@ public class Scanner {
 	                return tokens;
 	            default:
 	                return tokens;
-            }            
+            } 
             state = 0;
         }
         return tokens;

@@ -14,7 +14,7 @@ public class Main {
         Scanner scanner;
         scanner = new Scanner();
         List<Token> tokens;        
-        string = "1";
+        string = "1345+45";
         //string = "101b+11b";
         //string = "101b(+11b)";
         //string = ""; 

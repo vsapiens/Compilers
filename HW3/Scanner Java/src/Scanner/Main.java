@@ -14,15 +14,18 @@ public class Main {
         Scanner scanner;
         scanner = new Scanner();
         List<Token> tokens;        
-        string = "234 + $var - (8 + 9)";
+        string = "234 + $var - (8 + 9) + (3 - 4)";
         //string = "101b+11b";
         //string = "101b(+11b)";
         //string = ""; 
         System.out.println(string);
+        
         tokens = scanner.scan(string);
+        
         for (Token token : tokens) {
             System.out.println(token);
         }
+        
     }
 
 }

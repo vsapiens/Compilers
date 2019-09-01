@@ -1,27 +1,9 @@
 #include <cstdio>
 #include <string>
 
-int filter(char c)
+class Token
 {
-    switch (c)
-    {
-    case ’0’:
-    case ’1’:
-        return 0;
-    case ’b’:
-        return 1;
-    case ’+’:
-    case ’-’:
-        return 2;case ’(’:case ’)’:
-        return 3;
-    case ’ ’:
-    case ’\t’:
-        return 4;
-    default:
-        return 5;
-        // Illegal character
-    }
-}
+};
 int main(int argc, char *argv[])
 {
     string input;

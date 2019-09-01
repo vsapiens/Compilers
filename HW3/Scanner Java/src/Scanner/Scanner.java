@@ -141,7 +141,7 @@ public class Scanner {
         case 'x':
         case 'y':
         case 'z':
-        	return 2;
+            return 2;
         case '+':
         case '-':
         case '*':
@@ -149,10 +149,15 @@ public class Scanner {
             return 5;
        case '(':
        case ')':
+       case '[':
+       case ']':
             return 4;
+            
         case ' ':
         case '\t':
+        case '\n':
             return 0;
+            
         default:
             return 5;
             // Illegal character

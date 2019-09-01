@@ -6,18 +6,19 @@ import java.util.List;
 
 public class Scanner {
 
-    private boolean debugMode = true;
+    private boolean debugMode = false;
     private final int ERROR = 999;
     private final int[][] transitionMatrix;
     
 
     public Scanner() {
         transitionMatrix = new int[][]{
-            /*State 0*/ {0, 1, ERROR, 4, 107,108, ERROR},
+            /*State 0*/ {0, 1, ERROR, 3, 4, 5, ERROR},
             /*State 1*/ {ERROR, ERROR, 2, ERROR, ERROR, ERROR, ERROR},
-            /*State 2*/ {ERROR, ERROR, 3, 3, ERROR, ERROR, ERROR},
-            /*State 3*/ {104, 104, 3, 3, 104, 104,104},
-            /*State 4*/ {106, 106, 106, 4, 106, 106,106}
+            /*State 2*/ {106, 106, 2, 2, 106, 106, 106},
+            /*State 3*/ {107, 107, 107, 3, 107, 107, 107},
+            /*State 4*/ {108, 108, 108, 108, 108, 108, 108},
+            /*State 5*/ {109, 109, 109, 109, 109, 109, 109},
         };
 
     }
@@ -29,40 +30,59 @@ public class Scanner {
         List<Token> tokens;
         state = 0;
         index = 0;
+        int count = 50;
+        boolean done = false;
         tokens = new ArrayList();
-        while (index < string.length()) {
+        while (index < string.length() && !done && count-- > 0) {
             value = new StringBuilder();
+            done = false;
             do {
                 c = string.charAt(index);
                 System.out.println(c);
                 if (debugMode) {
-                    System.out.println("State " + state + ", \'" + c + "\' => " + transitionMatrix[state][filter(c)]);
+                    System.out.print("State " + state + ", \'" + c + "\' => " + transitionMatrix[state][filter(c)]);
+                    System.out.println("  Index " + index);
                 }
                 index++;
                 state = transitionMatrix[state][filter(c)];
-                if (state != 0) {
+                if (state != 0 && state < 100) {
                     value.append(c);
+                    if (index == string.length()) {
+                    	for (int i = 0; i < 7; i++) {
+                    		if (transitionMatrix[state][i] > 100) {
+                    			state = transitionMatrix[state][i];
+                    			if (debugMode) {
+                    				System.out.println("CHANGING STATE " + state);                    				
+                    			}
+                    			done = true;
+                    			break;
+                    		}
+                    	}
+                    }
                 }
-            } while (index < string.length() && state < 100);
+                if (state > 100) {
+                	if (debugMode) {
+                		System.out.println("At state " + state + " And index: " + index + " reducing index");                		
+                	}
+                	index--;
+                }
+            } while (index < string.length() && state < 100 && !done);
             switch (state) {
-            	case 4:
-            		  tokens.add(new Token(Type.NUMBER, value.toString()));
-            		break;
+
             	//State for variable
-	            case 104:
+	            case 106:
 	                tokens.add(new Token(Type.VARIABLE, value.toString()));
 	                break;
 	            //State for number
-	            case 106:
+	            case 107:
 	                tokens.add(new Token(Type.NUMBER, value.toString()));
 	                break;
 	            //State for parenthesis    
-	            case 107:
+	            case 108:
 	                tokens.add(new Token(Type.PARENTHESIS, value.toString()));
 	                break;
 	            //State for operator
-	            case 108:
-	            
+	            case 109:
 	                tokens.add(new Token(Type.OPERATOR, value.toString()));
 	                break;   
 	            //State for error 
@@ -95,6 +115,33 @@ public class Scanner {
         	return 3;
         case '$':
             return 1;
+        case 'a':
+        case 'b':
+        case 'c':
+        case 'd':
+        case 'e':
+        case 'f':
+        case 'g':
+        case 'h':
+        case 'i':
+        case 'j':
+        case 'k':
+        case 'l':
+        case 'm':
+        case 'n':
+        case 'o':
+        case 'p':
+        case 'q':
+        case 'r':
+        case 's':
+        case 't':
+        case 'u':
+        case 'v':
+        case 'w':
+        case 'x':
+        case 'y':
+        case 'z':
+        	return 2;
         case '+':
         case '-':
         case '*':

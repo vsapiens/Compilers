@@ -14,7 +14,7 @@ public class Main {
         Scanner scanner;
         scanner = new Scanner();
         List<Token> tokens;        
-        string = "1345+45";
+        string = "234 + $var - (8 + 9)";
         //string = "101b+11b";
         //string = "101b(+11b)";
         //string = ""; 

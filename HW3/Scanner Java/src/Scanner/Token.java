@@ -5,7 +5,8 @@ public class Token {
     public enum Type {
     	  VARIABLE,
           NUMBER,
-          PARENTHESIS,
+          OPENING_PARENTHESIS,
+          CLOSING_PARENTHESIS,
           OPERATOR
     }   
     

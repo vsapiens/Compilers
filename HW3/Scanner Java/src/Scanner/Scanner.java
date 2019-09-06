@@ -13,12 +13,13 @@ public class Scanner {
 
     public Scanner() {
         transitionMatrix = new int[][]{
-            /*State 0*/ {0, 1, ERROR, 3, 4, 5, ERROR},
-            /*State 1*/ {ERROR, ERROR, 2, ERROR, ERROR, ERROR, ERROR},
-            /*State 2*/ {106, 106, 2, 2, 106, 106, 106},
-            /*State 3*/ {107, 107, 107, 3, 107, 107, 107},
-            /*State 4*/ {108, 108, 108, 108, 108, 108, 108},
-            /*State 5*/ {109, 109, 109, 109, 109, 109, 109},
+            /*State 0*/ {0, 1, ERROR, 3, 4, 5, 6, ERROR},
+            /*State 1*/ {ERROR, ERROR, 2, ERROR, ERROR, ERROR, ERROR, ERROR},
+            /*State 2*/ {107, 107, 2, 2, 107, 107, 107, 107},
+            /*State 3*/ {108, 108, 108, 3, 108, 108, 108, 108},
+            /*State 4*/ {109, 109, 109, 109, 109, 109, 109, 109},
+            /*State 5*/ {110, 110, 110, 110, 110, 110, 110, 110},
+            /*State 6*/ {111, 111, 111, 111, 111, 111, 111, 111},
         };
 
     }
@@ -38,7 +39,6 @@ public class Scanner {
             done = false;
             do {
                 c = string.charAt(index);
-                System.out.println(c);
                 if (debugMode) {
                     System.out.print("State " + state + ", \'" + c + "\' => " + transitionMatrix[state][filter(c)]);
                     System.out.println("  Index " + index);
@@ -70,21 +70,25 @@ public class Scanner {
             switch (state) {
 
             	//State for variable
-	            case 106:
+	            case 107:
 	                tokens.add(new Token(Type.VARIABLE, value.toString()));
 	                break;
 	            //State for number
-	            case 107:
+	            case 108:
 	                tokens.add(new Token(Type.NUMBER, value.toString()));
 	                break;
-	            //State for parenthesis    
-	            case 108:
-	                tokens.add(new Token(Type.PARENTHESIS, value.toString()));
-	                break;
-	            //State for operator
+	            //State for opening parenthesis    
 	            case 109:
-	                tokens.add(new Token(Type.OPERATOR, value.toString()));
+	                tokens.add(new Token(Type.OPENING_PARENTHESIS, value.toString()));
+	                break;
+	            //State for closing parenthesis
+	            case 110:
+	                tokens.add(new Token(Type.CLOSING_PARENTHESIS, value.toString()));
 	                break;   
+	              //State for operator
+	            case 111:
+	                tokens.add(new Token(Type.OPERATOR, value.toString()));
+	                break; 
 	            //State for error 
 	            case ERROR:
 	                value.append(c);
@@ -146,12 +150,11 @@ public class Scanner {
         case '-':
         case '*':
         case '/':	
-            return 5;
+            return 6;
        case '(':
-       case ')':
-       case '[':
-       case ']':
             return 4;
+       case ')':
+           	return 5;
             
         case ' ':
         case '\t':
@@ -159,7 +162,7 @@ public class Scanner {
             return 0;
             
         default:
-            return 5;
+            return 7;
             // Illegal character
         }
     }

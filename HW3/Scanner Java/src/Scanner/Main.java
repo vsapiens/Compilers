@@ -12,6 +12,8 @@ public class Main {
 
         String string;
         Scanner scanner;
+        Parser parser;
+        parser = new Parser();
         scanner = new Scanner();
         List<Token> tokens;        
         string = "234 + $var - (8 + 9) + (3 - 4)";
@@ -22,9 +24,15 @@ public class Main {
         
         tokens = scanner.scan(string);
         
+        //Parse the tokens
+        parser.parseS(tokens);
+        
+        /*
         for (Token token : tokens) {
             System.out.println(token);
         }
+        */
+        
         
     }
 

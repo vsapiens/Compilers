@@ -24,7 +24,7 @@ import Scanner.Token;
 	5. ( / ( * 2 ( 7 8 ) ) ( + 4 ( + $erw 5 ) ) )
 	6. ( -           ( * 2 5 ) (+ 2 3 ))
 	
-	->Anormal cases
+	->Abnormal cases
 	
 	1. ( - ( * 2 $4var4 ) (+ $1 3 )
 	2.  ( / ( / 2 3 4 ) 6 )

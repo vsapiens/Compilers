@@ -1,5 +1,9 @@
 package Scanner;
-
+/**
+ * Token Class
+ * @author luis
+ *
+ */
 public class Token {
 
     public enum Type {

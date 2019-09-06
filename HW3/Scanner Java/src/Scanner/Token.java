@@ -18,6 +18,11 @@ public class Token {
         this.value = value;
     }
     
+    public Token(Type type) {
+        this.type = type;
+        this.value = "";
+    }
+    
     public Type getType() {
         return type;
     }

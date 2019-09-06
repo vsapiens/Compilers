@@ -24,7 +24,7 @@ public class Scanner {
 
     }
 
-    public List<Token> scan(String string) {
+    public List<Token> scan(String string) throws Exception {
         char c;
         int state, index;
         StringBuilder value;
@@ -92,8 +92,7 @@ public class Scanner {
 	            //State for error 
 	            case ERROR:
 	                value.append(c);
-	                System.out.println("LEXICAL ERROR: the string \'" + value.toString() + "\' is not a valid element in the language.");
-	                return tokens;
+	                throw new Exception("LEXICAL ERROR: the string \'" + value.toString() + "\' is not a valid element in the language.");
 	            default:
 	                return tokens;
             } 

@@ -16,23 +16,31 @@ public class Main {
         parser = new Parser();
         scanner = new Scanner();
         List<Token> tokens;        
-        string = "234 + $var - (8 + 9) + (3 - 4)";
+        string = "(+ (- 2 89) ( $erw 90))";
         //string = "101b+11b";
         //string = "101b(+11b)";
         //string = ""; 
         System.out.println(string);
         
-        tokens = scanner.scan(string);
+        try {
+        	tokens = scanner.scan(string);
+        } catch (Exception e) {
+        	System.out.println(e.toString());
+        	return;
+        }
         
-        //Parse the tokens
-        parser.parseS(tokens);
         
-        /*
         for (Token token : tokens) {
             System.out.println(token);
         }
-        */
         
+        //Parse the tokens
+        try {
+        	parser.parseS(tokens);
+        } catch (Exception e) {
+        	System.out.println(e.toString());
+        	return;
+        }
         
     }
 
